@@ -3,7 +3,7 @@
 
 
 
-###### my website: https://dmorean.netlify.app/
+
 #### About ScanBo
 ###### My program is a port scanning tool in Python that offers two options: a quick scan of common ports and a more comprehensive one that covers all ports. Users choose the scan type and provide the IP address. The tool uses the socket module to display open and closed ports in real time, being useful for network administrators and security professionals.
 
