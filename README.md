@@ -13,5 +13,4 @@
 ![test1](https://github.com/DouglasMorean/ScanBo/assets/129215513/5a5cec2d-d05c-426d-83a0-0e4b78020b75)
 
 
-## Full Mode
-![test2](https://github.com/DouglasMorean/ScanBo/assets/129215513/bd2d2046-436f-4b7f-a8c1-666aa691a606)
+
