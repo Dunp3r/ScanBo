@@ -3,32 +3,18 @@ from colorama import init, Fore, Back, Style
 import threading
 
 img = """
- =======================================
-   _____                 ____        
-  / ____|               |  _ \       
- | (___   ___ __ _ _ __ | |_) | ___  
-  \___ \ / __/ _` | '_ \|  _ < / _ \ 
-  ____) | (_| (_| | | | | |_) | (_) |
- |_____/ \___\__,_|_| |_|____/ \___/   
- =======================================
- Created by Douglas Morean (aka. D0gp3r)                               
+ ================================================
+  ____                           ____          
+ / ___|    ___    __ _   _ __   | __ )    ___  
+ \___ \   / __|  / _` | | '_ \  |  _ \   / _ \ 
+  ___) | | (__  | (_| | | | | | | |_) | | (_) |
+ |____/   \___|  \__,_| |_| |_| |____/   \___/                                                 
+ ================================================
+ Created by Douglas Morean (aka. D0gp3r)
 """
-
-while True:
-    init()
-    print(Fore.RED + img + Fore.RESET)
-
-    print(Fore.BLUE+"[1] MOST COMMON PORTS" + Fore.WHITE + " [FAST]")
-    print(Fore.YELLOW+"[2] FULL SCAN" + Fore.WHITE +" [SLOW]" + Fore.RESET)
-    print()
-    eleccion = input("[-] SELECT SCAN TYPE: ")
-
-    if eleccion not in ['1', '2']:
-        print("PLEASE ENTER ONLY 1 or 2")
-        continue
-
-    eleccion = int(eleccion)
-    break
+init()
+print(Fore.RED + img + Fore.RESET)
+print()
 
 ip = input(Style.BRIGHT+"ENTER THE IP ADDRESS TO SCAN: ")
 
@@ -42,40 +28,28 @@ port_comun = [
 ]
 
 # LOOP MOST COMMON PORTS
-if eleccion == 1:
-    def scan_port(port):
-        try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.settimeout(1) # Wait time in seconds
-            result = sock.connect_ex((ip, port))
-            if result == 0:
-                print(Fore.GREEN+f"[+] Port {port}: Open")
-            sock.close()
-        except KeyboardInterrupt:
-            exit()
-        except:
-            pass
 
-    # Parallel port scanning using threads
-    threads = []
-    for port in port_comun:
-        thread = threading.Thread(target=scan_port, args=(port,))
-        threads.append(thread)
-        thread.start()
 
-    for thread in threads:
-        thread.join()
-
-# FULL SCAN LOOP
-if eleccion == 2:
-    for puerto in range(1, 65535):
+def scan_port(port):
+    try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(1)
-
-        result = sock.connect_ex((ip, puerto))
-
+        sock.settimeout(1)  # Wait time in seconds
+        result = sock.connect_ex((ip, port))
         if result == 0:
-            print(Fore.GREEN+f"[+] Port {str(puerto)} Open")
-            sock.close()
-        else:
-            print(Fore.RED+f'[-] Port {str(puerto)} Closed')
+            print(Fore.GREEN+f"[+] Port {port}: Open")
+        sock.close()
+    except KeyboardInterrupt:
+        exit()
+    except:
+        pass
+
+
+# Parallel port scanning using threads
+threads = []
+for port in port_comun:
+    thread = threading.Thread(target=scan_port, args=(port,))
+    threads.append(thread)
+    thread.start()
+
+for thread in threads:
+    thread.join()
