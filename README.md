@@ -6,11 +6,8 @@
 
 #### About ScanBo
 ###### Port scanner developed in Python
-###### Tested only on Linux operating systems
+###### Tested only on **Linux** operating systems
 #### Use `$ python3 ScanBo.py`
-
-## Fast Mode
-![test1](https://github.com/DouglasMorean/ScanBo/assets/129215513/5a5cec2d-d05c-426d-83a0-0e4b78020b75)
 
 
 
