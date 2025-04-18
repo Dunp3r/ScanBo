@@ -10,7 +10,7 @@ img = """
   ___) | | (__  | (_| | | | | | | |_) | | (_) |
  |____/   \___|  \__,_| |_| |_| |____/   \___/                                                 
  ================================================
- Created by Douglas Morean (aka. D0gp3r)
+ Created by Dunp3r.
 """
 init()
 print(Fore.RED + img + Fore.RESET)
