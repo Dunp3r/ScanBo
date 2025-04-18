@@ -7,6 +7,14 @@
 #### About ScanBo
 ###### Port scanner developed in Python
 ###### Tested only on **Linux** operating systems
+> installation
+
+```
+git clone https://github.com/Dunp3r/ScanBo.git
+cd ScanBo
+python3 ScanBo.py
+```
+
 #### Use `$ python3 ScanBo.py`
 
 
