@@ -5,12 +5,17 @@
 
 
 #### About ScanBo
-###### My program is a port scanning tool in Python that offers two options: a quick scan of common ports and a more comprehensive one that covers all ports. Users choose the scan type and provide the IP address. The tool uses the socket module to display open and closed ports in real time, being useful for network administrators and security professionals.
+###### Port scanner developed in Python
+###### Tested only on **Linux** operating systems
+> installation
+
+```
+git clone https://github.com/Dunp3r/ScanBo.git
+cd ScanBo
+python3 ScanBo.py
+```
 
 #### Use `$ python3 ScanBo.py`
-
-## Fast Mode
-![test1](https://github.com/DouglasMorean/ScanBo/assets/129215513/5a5cec2d-d05c-426d-83a0-0e4b78020b75)
 
 
 
