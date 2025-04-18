@@ -2,7 +2,7 @@ import socket
 from colorama import init, Fore, Back, Style
 import threading
 
-img = """
+img = r"""
  ================================================
   ____                           ____          
  / ___|    ___    __ _   _ __   | __ )    ___  
